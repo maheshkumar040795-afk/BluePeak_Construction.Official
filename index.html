@@ -16,7 +16,7 @@
 <link rel="manifest" href="/site.webmanifest">
 <meta name="theme-color" content="#0a1628">
 
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 <style>
   :root {
@@ -35,43 +35,11 @@
 
   html { scroll-behavior: smooth; }
 
-  /* CUSTOM CURSOR */
   body {
-    cursor: none;
     background: var(--navy);
     color: var(--white);
     font-family: 'Inter', sans-serif;
     overflow-x: hidden;
-  }
-
-  #cursor-dot {
-    width: 8px; height: 8px;
-    background: var(--sky);
-    border-radius: 50%;
-    position: fixed;
-    top: 0; left: 0;
-    pointer-events: none;
-    z-index: 99999;
-    transform: translate(-50%, -50%);
-    transition: transform 0.05s ease;
-  }
-  #cursor-ring {
-    width: 36px; height: 36px;
-    border: 2px solid var(--sky);
-    border-radius: 50%;
-    position: fixed;
-    top: 0; left: 0;
-    pointer-events: none;
-    z-index: 99998;
-    transform: translate(-50%, -50%);
-    transition: all 0.15s ease;
-    opacity: 0.7;
-  }
-  #cursor-ring.expanded {
-    width: 60px; height: 60px;
-    border-color: var(--gold);
-    opacity: 1;
-    background: rgba(245, 166, 35, 0.08);
   }
 
   /* NAV */
@@ -111,7 +79,7 @@
   }
   .nav-logo-text { line-height: 1.1; }
   .nav-logo-name {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Playfair Display', serif;
     font-size: 34px;
     letter-spacing: 1px;
     color: var(--sky);
@@ -159,9 +127,7 @@
   }
   .hero-bg {
     position: absolute; inset: 0;
-    background:
-      linear-gradient(135deg, rgba(21,101,192,0.3) 0%, transparent 50%),
-      linear-gradient(to bottom, rgba(6,14,28,0.7) 0%, rgba(6,14,28,0.4) 50%, rgba(6,14,28,0.9) 100%);
+    background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.3) 45%, rgba(0,0,0,0.65) 100%);
     z-index: 1;
   }
   .hero-grid-bg {
@@ -172,10 +138,12 @@
     background-size: 60px 60px;
     z-index: 0;
   }
-  .hero-image-bg {
+  .hero-video-bg {
     position: absolute; inset: 0;
-    background: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1800&q=85&fit=crop') center/cover no-repeat;
-    opacity: 0.25;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    opacity: 0.9;
+    filter: brightness(1.1) contrast(1.05) saturate(1.1);
     z-index: 0;
   }
   .hero-content {
@@ -205,8 +173,8 @@
     50% { opacity: 0.5; transform: scale(1.4); }
   }
   .hero-headline {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(72px, 9vw, 130px);
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(43px, 5.4vw, 78px);
     line-height: 0.92;
     letter-spacing: 2px;
     color: var(--white);
@@ -239,7 +207,7 @@
     background: linear-gradient(135deg, var(--blue), var(--sky));
     color: white; padding: 16px 36px; border-radius: 6px;
     font-size: 14px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase;
-    text-decoration: none; border: none; cursor: none;
+    text-decoration: none; border: none;
     transition: transform 0.2s, box-shadow 0.2s;
     display: inline-flex; align-items: center; gap: 10px;
   }
@@ -248,22 +216,26 @@
     box-shadow: 0 12px 35px rgba(66,165,245,0.4);
   }
   .btn-outline {
-    border: 1.5px solid rgba(255,255,255,0.3);
-    color: white; padding: 16px 36px; border-radius: 6px;
-    font-size: 14px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase;
-    text-decoration: none; cursor: none;
+    border: 1.5px solid rgba(255,255,255,0.45);
+    color: white; padding: 16px 36px; border-radius: 8px;
+    font-size: 14px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+    text-decoration: none;
     transition: all 0.2s;
     display: inline-flex; align-items: center; gap: 10px;
-    background: transparent;
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.25);
   }
   .btn-outline:hover {
     border-color: var(--sky); color: var(--sky);
-    background: rgba(66,165,245,0.08);
+    background: rgba(66,165,245,0.18);
   }
 
   .btn-gold {
-    border-color: rgba(245,166,35,0.5) !important;
+    border-color: rgba(245,166,35,0.6) !important;
     color: var(--gold) !important;
+    background: rgba(245,166,35,0.14) !important;
   }
   .btn-gold:hover {
     border-color: var(--gold) !important;
@@ -278,7 +250,7 @@
     animation: fadeUp 0.8s ease 0.55s both;
   }
   .hero-stat-num {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Playfair Display', serif;
     font-size: 52px; color: var(--sky); line-height: 1;
     letter-spacing: 2px;
   }
@@ -331,7 +303,7 @@
     color: var(--sky); font-weight: 600; margin-bottom: 16px;
   }
   .section-title {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Playfair Display', serif;
     font-size: clamp(42px, 5vw, 72px);
     line-height: 1;
     letter-spacing: 2px;
@@ -359,7 +331,6 @@
     padding: 48px 36px;
     position: relative; overflow: hidden;
     transition: background 0.3s ease;
-    cursor: none;
   }
   .service-card::before {
     content: '';
@@ -381,7 +352,7 @@
   }
   .service-card:hover .service-icon { background: rgba(66,165,245,0.22); }
   .service-title {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Playfair Display', serif;
     font-size: 26px; letter-spacing: 1px; color: var(--white);
     margin-bottom: 12px;
   }
@@ -420,7 +391,7 @@
     box-shadow: 0 20px 50px rgba(21,101,192,0.4);
   }
   .about-badge-num {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Playfair Display', serif;
     font-size: 52px; line-height: 1; color: white; letter-spacing: 2px;
   }
   .about-badge-label { font-size: 12px; letter-spacing: 2px; color: rgba(255,255,255,0.8); text-transform: uppercase; }
@@ -436,7 +407,7 @@
     width: 56px; height: 56px; border-radius: 50%;
     background: linear-gradient(135deg, var(--blue), var(--sky));
     display: flex; align-items: center; justify-content: center;
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 22px; color: white; letter-spacing: 1px;
     flex-shrink: 0;
   }
@@ -470,7 +441,7 @@
   }
   .project-card {
     background: var(--steel); border-radius: 10px; overflow: hidden;
-    position: relative; cursor: none;
+    position: relative;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: 1px solid rgba(66,165,245,0.1);
   }
@@ -507,7 +478,7 @@
     color: var(--sky); font-weight: 600; margin-bottom: 8px;
   }
   .project-name {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Playfair Display', serif;
     font-size: 22px; letter-spacing: 1px; color: var(--white); margin-bottom: 6px;
   }
   .project-loc { font-size: 13px; color: var(--muted); }
@@ -532,14 +503,13 @@
     border: 1px solid rgba(66,165,245,0.1);
     border-radius: 10px;
     transition: border-color 0.3s, background 0.3s;
-    cursor: none;
   }
   .feature-item:hover {
     border-color: rgba(66,165,245,0.3);
     background: rgba(66,165,245,0.08);
   }
   .feature-num {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Playfair Display', serif;
     font-size: 36px; color: rgba(66,165,245,0.25);
     line-height: 1; letter-spacing: 1px; min-width: 44px;
   }
@@ -551,9 +521,10 @@
   }
   .why-img {
     width: 100%; border-radius: 12px; overflow: hidden;
-    aspect-ratio: 3/4;
-    background: url('https://res.cloudinary.com/dt97offnl/image/upload/v1782448234/Gemini_Generated_Image_152dfm152dfm152d_lyvaan.png') center/contain no-repeat;
     background-color: #0a1628;
+  }
+  .why-img img {
+    width: 100%; height: auto; display: block;
   }
   .why-stats-overlay {
     position: absolute; top: 30px; left: -30px;
@@ -563,7 +534,7 @@
     display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
   }
   .why-stat-num {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Playfair Display', serif;
     font-size: 36px; color: var(--sky); line-height: 1;
   }
   .why-stat-label { font-size: 11px; color: var(--muted); letter-spacing: 1px; text-transform: uppercase; margin-top: 2px; }
@@ -594,7 +565,7 @@
   .social-btn {
     width: 56px; height: 56px; border-radius: 12px;
     display: flex; align-items: center; justify-content: center;
-    text-decoration: none; cursor: none;
+    text-decoration: none;
     transition: transform 0.2s, box-shadow 0.2s;
     flex-shrink: 0;
   }
@@ -611,7 +582,7 @@
     padding: 48px 44px;
   }
   .form-title {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Playfair Display', serif;
     font-size: 32px; letter-spacing: 2px; color: var(--white);
     margin-bottom: 8px;
   }
@@ -631,7 +602,6 @@
     border-radius: 8px; color: var(--white);
     font-size: 14px; font-family: 'Inter', sans-serif;
     transition: border-color 0.3s, background 0.3s;
-    cursor: none;
   }
   .form-group input:focus,
   .form-group select:focus,
@@ -648,7 +618,7 @@
     border: none; border-radius: 8px;
     color: white; font-size: 14px; font-weight: 700;
     letter-spacing: 2px; text-transform: uppercase;
-    cursor: none; transition: transform 0.2s, box-shadow 0.2s;
+    transition: transform 0.2s, box-shadow 0.2s;
     margin-top: 8px;
   }
   .form-submit-btn:hover {
@@ -676,10 +646,10 @@
   .modal-close {
     position: absolute; top: 16px; right: 20px;
     background: none; border: none; color: var(--muted);
-    font-size: 22px; cursor: none;
+    font-size: 22px;
   }
   .modal-title {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Playfair Display', serif;
     font-size: 36px; letter-spacing: 2px; color: var(--white);
     margin-bottom: 8px;
   }
@@ -690,7 +660,6 @@
     padding: 16px 24px; border-radius: 10px;
     text-decoration: none; color: white; font-weight: 600;
     font-size: 15px; transition: transform 0.2s, box-shadow 0.2s;
-    cursor: none;
   }
   .share-btn:hover { transform: translateX(6px); }
   .share-btn .share-icon { font-size: 22px; width: 24px; text-align: center; }
@@ -709,7 +678,7 @@
     margin-bottom: 60px;
   }
   .footer-brand-name {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Playfair Display', serif;
     font-size: 32px; letter-spacing: 3px; color: var(--white); margin-bottom: 12px;
   }
   .footer-brand-desc { font-size: 14px; color: var(--muted); line-height: 1.8; margin-bottom: 24px; }
@@ -724,7 +693,7 @@
   .footer-social a.fb { background: #1877f2; }
   .footer-social a.ig { background: radial-gradient(circle at 30% 110%, #ffdf79 0%, #f9a54c 15%, #e4406e 40%, #9b3ba4 65%, #4460a0 100%); }
   .footer-col-title {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Playfair Display', serif;
     font-size: 20px; letter-spacing: 2px; color: var(--white);
     margin-bottom: 24px; padding-bottom: 12px;
     border-bottom: 1px solid rgba(66,165,245,0.15);
@@ -765,7 +734,6 @@
     display: flex; align-items: center; justify-content: center;
     font-size: 22px; color: white; text-decoration: none;
     transition: transform 0.2s, box-shadow 0.2s;
-    cursor: none;
     position: relative;
   }
   .fab-btn:hover { transform: scale(1.13); }
@@ -806,7 +774,6 @@
     border: 1.5px solid rgba(255,255,255,0.3);
     color: rgba(255,255,255,0.9); font-size: 18px;
     display: flex; align-items: center; justify-content: center;
-    cursor: none;
     box-shadow: 0 4px 18px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.2);
     transition: transform 0.2s, box-shadow 0.2s, opacity 0.3s, background 0.2s;
     opacity: 0; pointer-events: none;
@@ -871,7 +838,7 @@
     margin-bottom: 12px;
   }
   .mobile-menu-brand {
-    font-family: "Bebas Neue", sans-serif;
+    font-family: "Playfair Display", serif;
     font-size: 22px; letter-spacing: 3px; color: var(--white);
   }
   .mobile-menu-brand span { color: var(--sky); }
@@ -990,17 +957,17 @@
     text-align: center;
   }
   .pkg-name {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Playfair Display', serif;
     font-size: 20px; letter-spacing: 3px;
     color: var(--navy); margin-bottom: 6px;
   }
   .pkg-price {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Playfair Display', serif;
     font-size: 14px; color: var(--navy); opacity: 0.85;
   }
   .pkg-price span {
     font-size: 44px; letter-spacing: 1px; line-height: 1;
-    color: var(--navy); font-family: 'Bebas Neue', sans-serif;
+    color: var(--navy); font-family: 'Playfair Display', serif;
   }
   .pkg-price small { font-size: 13px; font-family: 'Inter', sans-serif; font-weight: 600; }
 
@@ -1043,7 +1010,7 @@
     padding: 13px;
     background: linear-gradient(135deg, var(--gold), #e8920a);
     color: var(--navy); text-align: center; text-decoration: none;
-    font-family: 'Bebas Neue', sans-serif; font-size: 15px; letter-spacing: 2px;
+    font-family: 'Inter', sans-serif; font-size: 15px; letter-spacing: 2px;
     border-radius: 8px; border: none; cursor: pointer;
     transition: transform 0.2s, box-shadow 0.2s;
   }
@@ -1123,7 +1090,7 @@
     color: var(--light); text-align: right;
   }
   .calc-total-val {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Playfair Display', serif;
     font-size: 26px; color: var(--gold); text-align: right;
     letter-spacing: 1px;
   }
@@ -1132,7 +1099,7 @@
     padding: 14px 36px; font-size: 18px; border-radius: 10px;
     background: linear-gradient(135deg, #25d366, #128c7e);
     color: white; border: none; cursor: pointer;
-    font-family: 'Bebas Neue', sans-serif; letter-spacing: 2px;
+    font-family: 'Inter', sans-serif; letter-spacing: 2px;
     transition: transform 0.2s, box-shadow 0.2s;
     width: auto;
   }
@@ -1214,10 +1181,6 @@
 </head>
 <body>
 
-<!-- CUSTOM CURSOR -->
-<div id="cursor-dot"></div>
-<div id="cursor-ring"></div>
-
 <!-- FAB GROUP -->
 <div class="fab-group">
   <a href="https://wa.me/918056200856" target="_blank" class="fab-btn fab-whatsapp" title="Chat on WhatsApp">
@@ -1289,7 +1252,9 @@
 
 <!-- HERO -->
 <section id="hero">
-  <div class="hero-image-bg"></div>
+  <video class="hero-video-bg" autoplay muted loop playsinline preload="auto">
+    <source src="https://res.cloudinary.com/lfgnusmd/video/upload/v1787728894/Drone_flying_over_lake_towards_202608261250_m1plfi.mp4" type="video/mp4">
+  </video>
   <div class="hero-grid-bg"></div>
   <div class="hero-bg"></div>
   <div class="hero-content">
@@ -2102,7 +2067,7 @@
         </div>
       </div>
       <div class="why-visual reveal">
-        <div class="why-img"></div>
+        <div class="why-img"><img src="https://res.cloudinary.com/lfgnusmd/image/upload/v1787727022/images_rrxnrn.jpg" alt="Blue Peak Construction team" loading="lazy"></div>
 
       </div>
     </div>
@@ -2283,31 +2248,6 @@
 </footer>
 
 <script>
-  // CUSTOM CURSOR
-  const dot = document.getElementById('cursor-dot');
-  const ring = document.getElementById('cursor-ring');
-  let mx = 0, my = 0, rx = 0, ry = 0;
-
-  document.addEventListener('mousemove', e => {
-    mx = e.clientX; my = e.clientY;
-    dot.style.left = mx + 'px';
-    dot.style.top = my + 'px';
-  });
-
-  function animateRing() {
-    rx += (mx - rx) * 0.12;
-    ry += (my - ry) * 0.12;
-    ring.style.left = rx + 'px';
-    ring.style.top = ry + 'px';
-    requestAnimationFrame(animateRing);
-  }
-  animateRing();
-
-  document.querySelectorAll('a, button, .service-card, .project-card, .feature-item, input, select, textarea').forEach(el => {
-    el.addEventListener('mouseenter', () => ring.classList.add('expanded'));
-    el.addEventListener('mouseleave', () => ring.classList.remove('expanded'));
-  });
-
   // NAV SCROLL
   window.addEventListener('scroll', () => {
     const nav = document.getElementById('mainNav');
@@ -2626,7 +2566,7 @@
   }
   .qp-header-bar i { color: var(--navy); font-size: 14px; }
   .qp-header-bar span {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Playfair Display', serif;
     font-size: 17px; letter-spacing: 2px; color: var(--navy);
   }
 
@@ -2670,7 +2610,7 @@
     width: 100%; padding: 11px;
     background: linear-gradient(135deg, #25d366, #128c7e);
     border: none; border-radius: 8px; color: white;
-    font-family: 'Bebas Neue', sans-serif; font-size: 17px; letter-spacing: 2px;
+    font-family: 'Inter', sans-serif; font-size: 17px; letter-spacing: 2px;
     cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px;
     transition: transform 0.2s, box-shadow 0.2s; margin-top: 2px;
   }
@@ -2711,7 +2651,7 @@
   }
   .qp-logo-wrap img { width: 100%; height: 100%; object-fit: contain; }
   .qp-brand-name {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Playfair Display', serif;
     font-size: 22px; letter-spacing: 3px; line-height: 1.1;
     color: var(--white);
     position: relative; z-index: 1;
@@ -2728,7 +2668,7 @@
     position: relative; z-index: 1;
   }
   .qp-brand-big {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Playfair Display', serif;
     font-size: 20px; line-height: 1.15;
     color: var(--white); letter-spacing: 1.5px;
     position: relative; z-index: 1;
