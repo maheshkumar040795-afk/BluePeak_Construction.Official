@@ -980,6 +980,24 @@
     font-size: 20px; letter-spacing: 3px;
     color: var(--navy); margin-bottom: 6px;
   }
+  .pkg-price-old {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px; font-weight: 600;
+    color: var(--navy); opacity: 0.65;
+    text-decoration: line-through;
+    margin-bottom: 2px;
+  }
+  .pkg-offer-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px; font-weight: 800;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    color: #b3261e;
+    background: rgba(255,255,255,0.85);
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 20px;
+    margin-bottom: 6px;
+  }
   .pkg-price {
     font-family: 'Playfair Display', serif;
     font-size: 14px; color: var(--navy); opacity: 0.85;
@@ -1431,7 +1449,9 @@
       <div class="pkg-card">
         <div class="pkg-header">
           <div class="pkg-name">STANDARD PACKAGE</div>
-          <div class="pkg-price">₹ <span>2399</span> <small>per sqft</small></div>
+          <div class="pkg-price-old">₹2399/sqft</div>
+          <div class="pkg-offer-label">Offer Price</div>
+          <div class="pkg-price">₹ <span>2299</span> <small>per sqft</small></div>
         </div>
         <ul class="pkg-features">
           <li class="pkg-item" onclick="togglePkg(this,0)" data-row="0">
@@ -1557,7 +1577,9 @@
         <div class="pkg-badge-tag">POPULAR</div>
         <div class="pkg-header">
           <div class="pkg-name">PREMIUM PACKAGE</div>
-          <div class="pkg-price">₹ <span>2649</span> <small>per sqft</small></div>
+          <div class="pkg-price-old">₹2649/sqft</div>
+          <div class="pkg-offer-label">Offer Price</div>
+          <div class="pkg-price">₹ <span>2549</span> <small>per sqft</small></div>
         </div>
         <ul class="pkg-features">
           <li class="pkg-item" onclick="togglePkg(this,0)" data-row="0">
@@ -1691,7 +1713,9 @@
       <div class="pkg-card">
         <div class="pkg-header">
           <div class="pkg-name">ULTRA LUXURY</div>
-          <div class="pkg-price">₹ <span>3199</span> <small>per sqft</small></div>
+          <div class="pkg-price-old">₹3199/sqft</div>
+          <div class="pkg-offer-label">Offer Price</div>
+          <div class="pkg-price">₹ <span>3099</span> <small>per sqft</small></div>
         </div>
         <ul class="pkg-features">
           <li class="pkg-item" onclick="togglePkg(this,0)" data-row="0">
